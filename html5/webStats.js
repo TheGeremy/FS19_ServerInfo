@@ -206,6 +206,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 			
 			var webStatsVehicles = $("#webStatsVehicles");
 			var Vehicles = $(data).find("Server Vehicles Vehicle");
+			//var i = 0;
 			if (webStatsVehicles != null && Vehicles != null) {
 				Vehicles.each(function(index, element) {
 					var veh = $(element);
@@ -217,53 +218,66 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					   default:
     						controller = veh.attr("controller");
 					}
-					/* translate fillLevels */
-					switch(veh.attr("fillLevels")) {
-					  	case undefined:
-					    	fillLevels = "0.000";
-					    	break;				    	
-					   default:
-    						fillLevels = veh.attr("fillLevels");
-					}
-					fillLevels = fillLevels.replace("0.000 ", "");
-					/* translate fillLevels */
-					switch(veh.attr("fillTypes")) {					
-					  	case undefined:
-					    	fillTypes = "žiadny";
-					    	break;				
-					  	case "UNKNOWN":
-					    	fillTypes = "žiadny";
-					    	break;
-						case "DIESEL DEF AIR":
-					    	fillTypes = "diesel";
-					    	fillLevels = fillLevels.substring(0, fillLevels.search(" ")); //only first value
-					    	break;
-						case "DIESEL AIR":
-					    	fillTypes = "diesel";
-					    	fillLevels = fillLevels.substring(0, fillLevels.search(" ")); //only first value
-					    	break;					    						    	
-						case "UNKNOWN DIESEL":
-					    	fillTypes = "diesel";
-					    	break;						    							    	    	
-					   default:
-    						fillTypes = veh.attr("fillTypes");
-					}
-					function formatThousands(n, dp) {
+					function formatThousands(n,dp,f) {
+						// dp - decimal places
+						// f - format >> 'us', 'eu'
+						if (n == 0) {
+							if(f == 'eu') {
+								return "0," + "0".repeat(dp);	
+							}
+							return "0." + "0".repeat(dp);
+						}
+
+						/* round to 2 decimal places */
+						//n = Math.round( n * 100 ) / 100;
   						var s = ''+(Math.floor(n)), d = n % 1, i = s.length, r = '';
   						while ( (i -= 3) > 0 ) { r = ',' + s.substr(i, 3) + r; }
-  						return s.substr(0, i + 3) + r + (d ? '.' + Math.round(d * Math.pow(10,dp||2)) : '');
+  						var a = s.substr(0, i + 3) + r + (d ? '.' + Math.round((d+1) * Math.pow(10,dp)).toString().substr(1,dp) : '.' + "0".repeat(dp));
+  						/* change format from 20,000.00 to 20.000,00 */
+  						if (f == 'eu') {
+							var b = a.toString().replace(".", "#");
+							b = b.replace(",", ".");
+							return b.replace("#", ",");
+  						}					
+						return a;
 					}
-
-					var a = formatThousands(fillLevels);
-
-					var b = a.toString().replace(".", "#");
-					b = b.replace(",", ".");
-					fillLevels = b.replace("#", ",");
-					if (fillLevels == 0) {
-						fillLevels = fillLevels+",00";
+					/* translate each fill type, when multiple */
+					var fillTypes = "";
+					if (typeof veh.attr("fillTypes") !== 'undefined') {
+						fillTypesArray = veh.attr("fillTypes").split(' ');	
+						fillTypesArray.forEach(function(element, index) {
+							/* translate element */					
+							element = $.i18n._(element.trim());
+							/* recreate concanate string of fill types */
+							if (fillTypesArray.length-1 == index) {
+								fillTypes = fillTypes + element;
+							} else {
+								fillTypes = fillTypes + element + " | ";
+							}
+						});
 					} else {
-						fillLevels = fillLevels;
+						/* if veh.attr("fillTypes") undefined */
+						fillTypes = "žiadny";
 					}
+					/* format numbers */
+					/*console.log(veh.attr("fillTypes"));*/
+					var fillLevels = "";
+					if (typeof veh.attr("fillLevels") !== 'undefined') {
+						fillLevelsArray = veh.attr("fillLevels").split(' ');	
+						fillLevelsArray.forEach(function(element, index) {							
+							/* format number */					
+							element = formatThousands(element,2,'eu');
+							/* recreate concanate string of fill levels */
+							if (fillLevelsArray.length-1 == index) {
+								fillLevels = fillLevels + element;
+							} else {
+								fillLevels = fillLevels + element + " | ";
+							}
+						});
+					} else {
+						/* if veh.attr("fillLevels") undefined */
+						fillLevels = "0,00";
+					}		
 					webStatsVehicles.append("<tr><td>"+$.i18n._(veh.attr("name"))+"</td><td>"+$.i18n._(veh.attr("category"))+"</td><td>"+$.i18n._(veh.attr("type"))+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td>"+veh.attr("x")+" "+veh.attr("y")+" "+veh.attr("z")+"</td></tr>");
 				});
 			}	

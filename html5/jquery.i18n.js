@@ -138,6 +138,8 @@ var my_dictionary = {
   "SEEDERS":"sejačky",  
   "FERTILIZERSPREADERS":"rozprašovače",  
   "SPRAYERS":"postrekovače",  
+  "WEEDERS":"plečky",
+  "TEDDERS":"obracačky",
   // vehicles
   "tractor":"traktor",
   "combineDrivable":"kombajn",
@@ -162,6 +164,8 @@ var my_dictionary = {
   "sprayer":"postrekovač",
   "implementDynamicMountAttacher":"vidle na balíky",
   "attachableFrontloader":"čelný nakladač",
+  "weeder":"plečka",
+  "tedder":"obracačka",
   // items
   "PALLETS":"palety",
   "pallet":"paleta",
@@ -178,9 +182,13 @@ var my_dictionary = {
   "diesel":"nafta",
   "WHEAT":"pšenica",
   "STRAW":"slama",  
-  "DIESEL AIR":"nafta",
+  "DIESEL":"nafta",
+  "AIR":"vzduch",
   // names of items vehicles etc...
-  "woolPallet":"Pallet Wool"
+  "woolPallet":"Pallet Wool",
+  "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
+  // "UNKNOWN":
+  "UNKNOWN":"žiadny"
 }
 
 $.i18n.load(my_dictionary);
