@@ -162,7 +162,12 @@ var my_dictionary = {
   "sprayer":"postrekovač",
   "implementDynamicMountAttacher":"vidle na balíky",
   "attachableFrontloader":"čelný nakladač",
+  // items
+  "PALLETS":"palety",
+  "pallet":"paleta",
+  "BIGBAGS":"palety",
   // filables
+  "WOOL":"vlna",
   "ANIMALS":"zvieratá", 
   "HERBICIDE":"herbicíd",
   "FERTILIZER":"umelé hnojivo",  
@@ -173,7 +178,9 @@ var my_dictionary = {
   "diesel":"nafta",
   "WHEAT":"pšenica",
   "STRAW":"slama",  
-  "DIESEL AIR":"nafta"
+  "DIESEL AIR":"nafta",
+  // names of items vehicles etc...
+  "woolPallet":"Pallet Wool"
 }
 
 $.i18n.load(my_dictionary);

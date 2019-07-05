@@ -264,7 +264,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					} else {
 						fillLevels = fillLevels;
 					}
-					webStatsVehicles.append("<tr><td>"+veh.attr("name")+"</td><td>"+$.i18n._(veh.attr("category"))+"</td><td>"+$.i18n._(veh.attr("type"))+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td>"+veh.attr("x")+" "+veh.attr("y")+" "+veh.attr("z")+"</td></tr>");
+					webStatsVehicles.append("<tr><td>"+$.i18n._(veh.attr("name"))+"</td><td>"+$.i18n._(veh.attr("category"))+"</td><td>"+$.i18n._(veh.attr("type"))+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td>"+veh.attr("x")+" "+veh.attr("y")+" "+veh.attr("z")+"</td></tr>");
 				});
 			}	
             
