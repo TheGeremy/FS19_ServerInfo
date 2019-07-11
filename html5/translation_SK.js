@@ -19,14 +19,17 @@ var my_dictionary = {
   "WEEDERS":"plečky",
   "TEDDERS":"obracačky",
   "LOADERWAGONS":"senážne vozy",
+  "GATORPACK":"Gator balík",
   // vehicles
   "tractor":"traktor",
   "combineDrivable":"kombajn",
+  "carFillable":"auto",
   // trailers
   "trailer":"príves",
   "trainTrailer":"vagón",
   "trainTimberTrailer":"vagón",
   "pdlc_andersonPack.extendedBaleLoader":"príves na balíky",
+  "FS19_JohnDeereGatorPack.jdUniversalTankTrailer":"cisterna",
   "forageWagon":"senážny voz",
   // implements
   "implement":"závažie",
@@ -50,6 +53,7 @@ var my_dictionary = {
   "PALLETS":"palety",
   "pallet":"paleta",
   "BIGBAGS":"palety",
+  "shovel":"lyžica",
   // filables
   "WOOL":"vlna",
   "ANIMALS":"zvieratá", 
@@ -58,6 +62,7 @@ var my_dictionary = {
   "SEEDS":"sejivo",
   "LIME":"vápno",  
   "GRASS_WINDROW":"tráva",  
+  "DRYGRASS_WINDROW":"seno",
   "WATER":"voda",
   "diesel":"nafta",
   "WHEAT":"pšenica",
