@@ -7,32 +7,72 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 	var getVehicleType = (function () {
 	    // Maps individual vehicle types to vehicle group names
 	    var vehicleGroupMapping = {
+	    	  // this is for proper point color on map
+	    	  // tool - yellow point
+	    	  // vehicle - green point
+	    	  // trailer - blue point
+	    	  // harvester - red point 
+	    	  
+	    	  // tool is default, so if any new is tool
+	    	  // you dont have to specified it here
 	        // Default
 	        '@': 'tool',
 
-	        // Identities
+	        // vehicles
 	        'vehicle': 'vehicle',
-	        'harvester': 'harvester',
-	        'tool': 'tool',
-	        'trailer': 'trailer',
+	        'VEHICLES': 'vehicle',
+	        'baseDrivable':'vehicle',
+	        'conveyorBelt':'vehicle',
+	        'drivableMixerWagon':'vehicle',
+	        'selfPropelledSprayer':'vehicle',
+	        'tractor':'vehicle',
+	        'TRACTORSL': 'vehicle',
+  		  	  'TRACTORSS': 'vehicle',
+	        'TRACTORSM': 'vehicle',
+	        'woodTruck':'vehicle',
+	        'carFillable': 'vehicle',
+	        'CARS': 'vehicle',
+	        'TRUCKS': 'vehicle',
 
-	        // Individuals
-	        'tractors': 'vehicle',
-	        'trucks': 'vehicle',
-	        'wheelLoaders': {
+	        // harvesters
+	        'harvester': 'harvester',
+	        'HARVESTERS': 'harvester',
+	        'cottonHarvester':'harvester',
+	        'combineDrivable': 'harvester',
+
+	        // trailers
+	        'trailer': 'trailer',
+	        'TRAILERS': 'trailer',
+	        'forwarderTrailer':'trailer',
+	        'loaderVehicle':'trailer',
+	        'manureTrailer':'trailer',
+	        'MANURESPREADERS': 'trailer',
+	        'LOADERWAGONS': 'trailer',
+	        'LOWLOADERS': 'trailer',
+	        'CUTTERTRAILERS': 'trailer',
+	        'DOLLYS': 'trailer',
+	        'TIPPERS': 'trailer',
+	        'AUGERWAGONS': 'trailer',
+	        'trainTrailer':'trailer',
+  		  	  'trainTimberTrailer':'trailer',
+
+	        // groups
+	        'WHEELLOADERS': {
 	            '@': 'vehicle',
 	            'dynamicMountAttacherImplement': 'tool',
 	            'shovel_animated': 'tool',
 	            'shovel_dynamicMountAttacher': 'tool'
 	        },
-	        'teleLoaders': {
+	        'TELELOADERS': {
 	            '@': 'vehicle',
 	            'dynamicMountAttacherImplement': 'tool',
+	            'implementDynamicMountAttacher': 'tool',
+	            'strawBlower':'tool',  
 	            'baleGrab': 'tool',
 	            'shovel_dynamicMountAttacher': 'tool',
 	            'shovel_animated': 'tool'
 	        },
-	        'skidSteers': {
+	        'SKIDSTEERS': {
 	            '@': 'vehicle',
 	            'dynamicMountAttacherImplement': 'tool',
 	            'shovel': 'tool',
@@ -40,48 +80,39 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 	            'stumpCutter': 'tool',
 	            'treeSaw': 'tool'
 	        },
-	        'cars': 'vehicle',
-
-	        'harvesters': 'harvester',
-	        'forageHarvesters': {
+	        'GATORPACK': {
+	            '@': 'vehicle',
+	            'carFillable':'vehicle',
+	            'FS19_JohnDeereGatorPack.jdUniversalTankTrailer':'trailer',
+					'FS19_JohnDeereGatorPack.jdUniversalTankTrailer':'trailer',	            
+	        },	        
+	        'FORAGEHARVESTERS': {
 	            '@': 'harvester',
 	            'attachableCombine': 'tool'
 	        },
-	        'potatoHarvesting': {
+	        'POTATOHARVESTING': {
 	            '@': 'harvester',
 	            'defoliator_animated': 'tool'
 	        },
-	        'beetHarvesting': {
+	        'BEETHARVESTING': {
 	            '@': 'harvester',
 	            'defoliater_cutter_animated': 'tool'
 	        },
-
-	        'frontLoaders': {
+	        'FRONTLOADERS': {
 	            '@': 'tool',
 	            'wheelLoader': 'vehicle'
 	        },
-	        'forageHarvesterCutters': 'tool',
-	        'cutters': 'tool',
-	        'plows': 'tool',
-	        'cultivators': 'tool',
-	        'sowingMachines': 'tool',
-	        'sprayers': {
+	        'SPRAYERS': {
 	            '@': 'tool',
 	            'selfPropelledSprayer': 'vehicle'
 	        },
-	        'fertilizerSpreaders': 'tool',
-	        'weeders': 'tool',
-	        'mowers': 'tool',
-	        'tedders': 'tool',
-	        'windrowers': 'tool',
-	        'baling': {
+	        'BALING': {
 	            '@': 'tool',
 	            'transportTrailer': 'trailer',
 	            'baleLoader': 'trailer',
 	            'baler': 'trailer'
 	        },
-	        'chainsaws': 'tool',
-	        'wood': {
+	        'WOOD': {
 	            '@': 'tool',
 	            'transportTrailer': 'trailer',
 	            'forwarderTrailer_steerable': 'trailer',
@@ -90,33 +121,19 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 	            'forwarder': 'vehicle',
 	            'woodHarvester': 'vehicle'
 	        },
-	        'animals': 'tool',
-	        'leveler': 'tool',
-	        'misc': {
+	        'MISC': {
 	            '@': 'tool',
 	            'fuelTrailer': 'trailer'
 	        },
-	        'dollys': 'tool',
-	        'weights': 'tool',
-	        'pallets': 'tool',
-	        'belts': 'tool',
-	        'placeables': 'tool',
-
-	        'tippers': 'trailer',
-	        'augerWagons': 'trailer',
-	        'slurryTanks': {
+	        'SLURRYTANKS': {
 	            '@': 'trailer',
 	            'manureBarrelCultivator': 'tool'
 	        },
-	        'manureSpreaders': 'trailer',
-	        'loaderWagons': 'trailer',
-	        'lowloaders': 'trailer',
-	        'cutterTrailers': 'trailer',
-	        'animals': {
+	        'ANIMALS': {
 	            '@': 'trailer',
 	            'selfPropelledMixerWagon': 'vehicle'
 	        },
-	        'dollys': 'trailer'
+	        
 	    };
 
 	    return function (vehicleType, vehicleSubtype) {
