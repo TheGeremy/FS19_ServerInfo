@@ -1,6 +1,7 @@
 var my_dictionary = {
   // vehicle groups 
   "TRACTORSL":"traktory tredy L",
+  "TRACTORSM":"traktory tredy M",
   "TRACTORSS":"traktory tredy S",
   "TRAILERS":"prívesy",
   "WEIGHTS":"závažia",

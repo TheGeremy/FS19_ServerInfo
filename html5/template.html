@@ -1,50 +1,66 @@
-
-<h1>Game</h1>
-
-<table>
-<tr><td><b>Version</b></td><td id="webStatsVersion"><!-- Dynamic content from JS --></td></tr>
-<tr><td><b>Game</b></td><td id="webStatsGame"><!-- Dynamic content from JS --></td></tr>
-<tr><td><b>Server</b></td><td id="webStatsServer"><!-- Dynamic content from JS --></td></tr>
-<tr><td><b>Name</b></td><td id="webStatsName"><!-- Dynamic content from JS --></td></tr>
-<tr><td><b>MapName</b></td><td id="webStatsMapName"><!-- Dynamic content from JS --></td></tr>
-<tr><td><b>MapSize</b></td><td id="webStatsMapSize"><!-- Dynamic content from JS --></td></tr>
-<tr><td><b>Money</b></td><td id="webStatsMoney"><!-- Dynamic content from JS --></td></tr>
-</table>
-
-<h1>Player</h1>
-
-<table id="webStatsPlayers">
-<tr><td><b>Name</b></td><td><b>Uptime</b></td><td><b>Position</b></td><td><b>Role</b></td></tr>
-<!-- Dynamic content from JS -->
-</table>
-
-<h1>Mods</h1>
-
-<table id="webStatsMods">
-<tr><td><b>Mod</b></td><td><b>Author</b></td><td><b>Hash</b></td><td><b>Version</b></td></tr>
-<!-- Dynamic content from JS -->
-</table>
-
-<h1>Vehicles</h1>
-
-<table id="webStatsVehicles">
-<tr><td><b>Name</b></td><td><b>Category</b></td><td><b>Type</b></td><td><b>FillTypes</b></td><td><b>FillLevels</b></td><td><b>Controller</b></td><td><b>Position</b></td></tr>
-<!-- Dynamic content from JS -->
-</table>
-
-<h1>Map</h1>
-
-<div id="webStatsMap" style="position:relative; width:1024px; height:1024px; overflow:auto">
-<!-- Dynamic content from JS -->
+<p id="webStats">
+<strong class="webStatsStrong">Hlavné informácie</strong>
+<div id="kontajner">
+<div>
+<em>Hra:&nbsp;</em><i id="webStatsGame"></i>
+<em>Verzia:&nbsp;</em><i id="webStatsVersion"></i>
+<em>Server:&nbsp;</em><i id="webStatsServer"></i></div>
+<div>
+<em>Názov:&nbsp;</em><i id="webStatsName"></i>
+<em>Mapa:&nbsp;</em><i id="webStatsMapName"></i>
+<em>Veľkosť mapy:&nbsp;</em><i id="webStatsMapSize"></i></div>
+<div>
+<em>Obtiažnosť:&nbsp;</em><i id="webStatsDiff"></i>
+<em>Peniaze:&nbsp;</em><i id="webStatsMoney"></i>
+<em>Odohraný čas:&nbsp;</em><i id="webStatsTime"></i></div>
 </div>
-
-
-<br />
-
+<p id="webStats">
+<strong class="webStatsStrong" id="webStatsPlCount"></strong>
+<table class="webStatsTable" id="webStatsPlayers">
+<tbody>
+<tr>
+<td><b>Meno</b></td>
+<td><b>Čas</b></td>
+<td><b>Pozícia</b></td>
+<td><b>Rola</b></td>
+</tr>
+</tbody>
+</table>
+<p id="webStats">
+<strong class="webStatsStrong">Módy</strong>
+<table class="webStatsTable" id="webStatsMods">
+<tbody>
+<tr>
+<td><b>Mód</b></td>
+<td><b>Autor</b></td>
+<td><b>Hash</b></td>
+<td><b>Verzia</b></td>
+</tr>
+</tbody>
+</table>
+<p id="webStats">
+<strong class="webStatsStrong">Vozidlá</strong>
+<table class="webStatsTable" id="webStatsVehicles">
+<tbody>
+<tr>
+<td><b>Názov</b></td>
+<td><b>Categória</b></td>
+<td><b>Typ</b></td>
+<td><b>Obsah</b></td>
+<td><b>Objem</b></td>
+<td><b>Operátor</b></td>
+<td><b>Pozícia</b></td>
+</tr>
+</tbody>
+</table>
+<p id="webStats">
+<strong id="webStatsStrong">Mapa</strong>
+<div id="webStatsMap" style="position:relative; width:1024px; height:1024px; overflow:auto"></div>
 Powered By <a href="http://www.giants-software.com/">GIANTS Software</a>
 
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="webStats.js"></script>
-<script type="text/javascript">loadWebStats("http://192.168.1.217:8080/feed/dedicated-server-stats.xml?code=80d680aac1ab86fd43b4273909b41ba0", true, true);</script>
-                                             
+<script type="text/javascript" src="http://!!!!!!!!!!!!!!!!!!!!!!!!!!your WEB server!!!!!!!!!!!!!!!!!!!/wp-content/html5/jquery.i18n.js"></script>
+<script type="text/javascript" src="http://!!!!!!!!!!!!!!!!!!!!!!!!!!your WEB server!!!!!!!!!!!!!!!!!!!/wp-content/html5/translation_SK.js"></script>
+<script type="text/javascript" src="http://!!!!!!!!!!!!!!!!!!!!!!!!!!your WEB server!!!!!!!!!!!!!!!!!!!/wp-content/html5/webStats.js"></script>
+<script type="text/javascript">loadWebStats("!!!!!!!!!!!!!!!!! link to dedicated-server-stats.xml!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", true, true);</script>
+<script type="text/javascript">loadCareerSavegame("!!!!!!!!!!!!!!! link to dedicated-server-savegame.html !!!!!!!!!!!!!!!!!!!!!! file=careerSavegame !!!!!!!!!!!!!!!!!");</script>
