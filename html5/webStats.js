@@ -326,10 +326,10 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
                     var x = (parseFloat(veh.attr("x")) + mapSizeHalf) / (mapSize / imageSize);
                     var z = (parseFloat(veh.attr("z")) + mapSizeHalf) / (mapSize / imageSize);
                     
-                    x = x - (machineIconSize-1)/2;
+                    x = x - (machineIconSize/2);
                     // change to add -8 because I dont know why but there is 8 more then needed
                     //z = z - (machineIconSize-1)/2;
-                    z = z - 8 - (machineIconSize-1)/2;
+                    z = z - 8 - (machineIconSize/2);
                     
                     var vehicleGroup = getVehicleType(veh.attr("category"), veh.attr("type"));
 
