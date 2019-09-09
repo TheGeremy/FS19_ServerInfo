@@ -28,6 +28,7 @@ var my_dictionary = {
   "TRUCKS":"kamióny",
   "LSFMUNIVERSALTANKPACK":"univerzálne cisterny",
   "ANIMALTRANSPORT":"preprava zvierat",
+  "DISCHARROWS":"kotúčové vlečky",
   // vehicles
   "tractor":"traktor",
   "combineDrivable":"kombajn",
@@ -74,7 +75,7 @@ var my_dictionary = {
   "WOOL":"vlna",
   "ANIMALS":"zvieratá", 
   "HERBICIDE":"herbicíd",
-  "FERTILIZER":"umelé hnojivo",  
+  "FERTILIZER":"pevné hnojivo",  
   "SEEDS":"sejivo",
   "LIME":"vápno",  
   "GRASS_WINDROW":"tráva",  
@@ -89,6 +90,8 @@ var my_dictionary = {
   "SUNFLOWER":"slnečnica",
   "OAT":"ovos",
   "BARLEY":"jačmeň",
+  "MAIZE":"kukurica",
+  "LIQUIDFERTILIZER":"tekuté hnojivo",
   // names of items vehicles etc...
   "woolPallet":"Pallet Wool",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
