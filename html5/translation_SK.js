@@ -33,6 +33,8 @@ var my_dictionary = {
   "tractor":"traktor",
   "combineDrivable":"kombajn",
   "carFillable":"auto",
+  "FendtFavorit800.fendt800":"Fendt Favorit 800",
+  "FS19_JD7430_7530P.JD7530":"John Deere Premium",
   // trailers
   "trailer":"príves",
   "trainTrailer":"vagón",
