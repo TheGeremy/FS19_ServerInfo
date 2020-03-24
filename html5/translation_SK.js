@@ -1,4 +1,5 @@
 var my_dictionary = {
+  // "":"",
   // vehicle groups 
   "TRACTORSL":"traktory tredy L",
   "TRACTORSM":"traktory tredy M",
@@ -29,6 +30,18 @@ var my_dictionary = {
   "LSFMUNIVERSALTANKPACK":"univerzálne cisterny",
   "ANIMALTRANSPORT":"preprava zvierat",
   "DISCHARROWS":"kotúčové vlečky",
+  "FS19_Kuhn_Interactive_Sprayers.addtank":"postrekovač",
+  "FS19_Rapid_A600_800S_Tramline.tram_fertilizingSowingMachine":"sádzač",
+  "manureBarrel":"postrekovač",
+  "MOWERVEHICLES":"kosačky",
+  "pdlc_claasPack.combineDrivableCrawlers":"kombajn",
+  "FORAGEHARVESTERS":"silážne kombajny",
+  "FORAGEHARVESTERCUTTERS":"silážne žacie stoly",
+  "MISCVEHICLES":"teleskopické nakladače",
+  "MANURESPREADERS":"rozhadzovače hnoja",
+  "SLURRYTANKS":"cisterny na močovku",
+  "MISC":"rôzne",
+  "TELELOADERVEHICLES":"teleskopické nakladače",
   // vehicles
   "tractor":"traktor",
   "combineDrivable":"kombajn",
@@ -37,7 +50,12 @@ var my_dictionary = {
   "FendtFavorit800.fendt800":"Fendt Favorit 800",
   "FS19_JD7430_7530P.JD7530":"John Deere Premium",
   "FS19_Fendt700_800Pack.fendt800":"Fendt 700/800",
+  "teleHandler":"teleskopický nakladač",
+  "tractorCrabSteering":"traktor",
+  "FS19_fendtVario_1000.vario1000":"traktor",
   // trailers
+  "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",     
+  "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
   "trailer":"príves",
   "trainTrailer":"vagón",
   "trainTimberTrailer":"vagón",
@@ -48,7 +66,10 @@ var my_dictionary = {
   "dynamicMountAttacherTrailer":"podvalník",
   "FS19_lsfmUniversalTankPack.lsfmUniversalTankTrailer":"cisterna",
   "livestockTrailer":"príves",
+  "manureSpreader":"rozhadzovač hnoja",  
   // implements
+  "fertilizingCultivator":"kultivátor s hnojením",
+  "pdlc_claasPack.extendedCutter":"silážny žací stôl",  
   "implement":"pracovný nástroj",
   "fillableImplement":"dodatočná nádrž",
   "cultivator":"kutivátor",
@@ -70,12 +91,16 @@ var my_dictionary = {
   "fertilizingSowingMachine":"sádzač",
   "dynamicMountAttacherShovel":"silážna lyžica",
   "stumpCutter":"fréza na pne",
+  "baleGrab":"kliešte na balíky",
+  "balerWrapper":"baliaci stroj",
+  "FS19_Fraese.pickupConveyor":"fréza",
   // items
   "PALLETS":"palety",
   "pallet":"paleta",
   "BIGBAGS":"palety",
   "shovel":"lyžica",
   // filables
+  "MATERIAL":"plátno",
   "WOOL":"vlna",
   "ANIMALS":"zvieratá", 
   "HERBICIDE":"herbicíd",
@@ -96,11 +121,19 @@ var my_dictionary = {
   "BARLEY":"jačmeň",
   "MAIZE":"kukurica",
   "LIQUIDFERTILIZER":"tekuté hnojivo",
+  "BIOMILK":"bio mlieko",
+  "WOOD2":"drevenné dosky",
+  "CHAFF":"rezanka",
+  "APPLE":"jablká",
   // names of items vehicles etc...
-  "woolPallet":"Pallet Wool",
+  "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
+  "StoffPallet":"Stoff Pallet",
+  "Boardspallet":"Boards Pallet",
+  "appleBox":"Apple Pallet",
   // "UNKNOWN":
   "UNKNOWN":"žiadny"
+  // "":"",
 }
 
 $.i18n.load(my_dictionary);
