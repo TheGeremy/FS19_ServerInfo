@@ -1,47 +1,37 @@
 <p id="webStats">
-<strong class="webStatsStrong">Hlavné informácie</strong>
-<div id="kontajner">
-<div>
-<em>Hra:&nbsp;</em><i id="webStatsGame"></i>
-<em>Verzia:&nbsp;</em><i id="webStatsVersion"></i>
-<em>Server:&nbsp;</em><i id="webStatsServer"></i></div>
-<div>
-<em>Názov:&nbsp;</em><i id="webStatsName"></i>
-<em>Mapa:&nbsp;</em><i id="webStatsMapName"></i>
-<em>Veľkosť mapy:&nbsp;</em><i id="webStatsMapSize"></i></div>
-<div>
-<em>Obtiažnosť:&nbsp;</em><i id="webStatsDiff"></i>
-<em>Peniaze:&nbsp;</em><i id="webStatsMoney"></i>
-<em>Odohraný čas:&nbsp;</em><i id="webStatsTime"></i></div>
-</div>
+<strong id="webStatsStrong">Hlavné informácie</strong>
+<em>Verzia:&nbsp;</em><i id="webStatsVersion"><!-- Dynamic content from JS --></i><br>
+<em>Hra:&nbsp;</em><i id="webStatsGame"> <!-- Dynamic content from JS --></i><br>
+<em>Server:&nbsp;</em><i id="webStatsServer"> <!-- Dynamic content from JS --></i><br>
+<em>Názov:&nbsp;</em><i id="webStatsName"> <!-- Dynamic content from JS --></i><br>
+<em>Mapa:&nbsp;</em><i id="webStatsMapName"> <!-- Dynamic content from JS --></i><br>
+<em>Veľkosť mapy:&nbsp;</em><i id="webStatsMapSize"> <!-- Dynamic content from JS --></i><br>
+<em>Peniaze:&nbsp;</em><i id="webStatsMoney"> <!-- Dynamic content from JS --></i><br>
+</p>
+
 <p id="webStats">
-<strong class="webStatsStrong" id="webStatsPlCount"></strong>
+<strong id="webStatsStrong">Hráči</strong>
+</p>
 <table class="webStatsTable" id="webStatsPlayers">
-<tbody>
-<tr>
-<td><b>Meno</b></td>
-<td><b>Čas</b></td>
-<td><b>Pozícia</b></td>
-<td><b>Rola</b></td>
-</tr>
-</tbody>
+<tr><td><b>Meno</b></td><td><b>Čas</b></td><td><b>Pozícia</b></td><td><b>Rola</b></td></tr>
 </table>
+
 <p id="webStats">
-<strong class="webStatsStrong">Módy</strong>
+<strong id="webStatsStrong">Módy</strong>
+</p>
 <table class="webStatsTable" id="webStatsMods">
-<tbody>
 <tr>
 <td><b>Mód</b></td>
 <td><b>Autor</b></td>
 <td><b>Hash</b></td>
 <td><b>Verzia</b></td>
 </tr>
-</tbody>
 </table>
+
 <p id="webStats">
-<strong class="webStatsStrong">Vozidlá</strong>
+<strong id="webStatsStrong">Vozidlá</strong>
+</p>
 <table class="webStatsTable" id="webStatsVehicles">
-<tbody>
 <tr>
 <td><b>Názov</b></td>
 <td><b>Categória</b></td>
@@ -51,21 +41,14 @@
 <td><b>Operátor</b></td>
 <td><b>Pozícia</b></td>
 </tr>
-</tbody>
 </table>
-<p id="webStats">
-<strong class="webStatsStrong">Mapa</strong>
-<div id="webStatsMap" style="position:relative; width:1024px; height:1024px; overflow:auto"></div>
-Powered By <a href="http://www.giants-software.com/">GIANTS Software</a>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-<!-- also change this 3 links -->
-<script src="http://fs19.nuba.synology.me/wp-content/html5/jquery.i18n.js" type="text/javascript"></script>
-<!-- also change this link to your lang dictionary (create you own based on translation_SK.js) -->
-<script src="http://fs19.nuba.synology.me/wp-content/html5/translation_SK.js" type="text/javascript"></script>
-<script src="http://fs19.nuba.synology.me/wp-content/html5/webStats.js" type="text/javascript"></script>
-<script type="text/javascript">loadWebStats("put our Server 'Link XML' here", true, true);</script>
-<script type="text/javascript">loadCareerSavegame("put your Server 'Link Savegame Files' here, link ending with =careerSavegame");</script>
-<!--
-You may need apply some css to make it nice...
--->
+<p id="webStats">
+<strong id="webStatsStrong">Mapa</strong>
+</p>
+<div id="webStatsMap" style="position:relative; width:1024px; height:1024px; overflow:auto">
+</div>
+<p>Powered By <a href="http://www.giants-software.com/">GIANTS Software</a></p>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://fs19.nuba.synology.me/wp-content/html5/webStats.js"></script>
+<script type="text/javascript">loadWebStats("http://luffty.asuscomm.com:8080/feed/dedicated-server-stats.xml?code=af3a228f833639d1b4ac39c14e9dcb4d", true, true);</script>
