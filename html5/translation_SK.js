@@ -55,6 +55,7 @@ var my_dictionary = {
   "teleHandler":"teleskopický nakladač",
   "tractorCrabSteering":"traktor",
   "FS19_fendtVario_1000.vario1000":"traktor",
+  "FS19_8R_2010_US.tractor8r2010US":"traktor",
   // trailers
   "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",     
   "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
@@ -136,6 +137,10 @@ var my_dictionary = {
   "APPLE":"jablká",
   "DIGESTATE":"digestát",
   "FORAGE":"krmivo",
+  "CLOVER":"ďatelina",
+  "SILAGE":"siláž",
+  "PIGFOOD":"krmivo",
+  "EGG":"vajcia",
   // names of items vehicles etc...
   "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
