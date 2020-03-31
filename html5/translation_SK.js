@@ -59,6 +59,7 @@ var my_dictionary = {
   "FS19_8R_2010_US.tractor8r2010US":"traktor",
   "EXP19_Chevy79K30SingleCab_DS.K30_SingleCab":"auto",
   "EXP19 Chevy K30 Singlecab 1979 DS":"EXP19 Chevy K30",
+  "FS19_JD_S700_US.combineS790":"traktor",
   // trailers
   "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",     
   "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
@@ -108,6 +109,7 @@ var my_dictionary = {
   "FS19_Fraese.pickupConveyor":"fréza",
   "cultivatingSowingMachine":"sejačka",
   "FS19_broom.broom":"pracovný nástroj",
+  "FS19_TajfunEGV80AHK.TajfunWinch":"ťažný nástroj",
   // items
   "PALLETS":"palety",
   "pallet":"paleta",
