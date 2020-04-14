@@ -215,8 +215,22 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					if (showModVersion) {
 						versionStr = "<td>" + Mod.attr("version") + "</td>";
 					}
+
+					var authorText = ""
+					if (Mod.attr("author").length > 50) {
+						authorText = Mod.attr("author").substring(0, 50) + "...";
+					} else {
+						authorText = Mod.attr("author");
+					}	
+
+					var modText = ""
+					if (Mod.text().length > 40) {
+						modText = Mod.text().substring(0, 40) + "...";
+					} else {
+						modText = Mod.text();
+					}				
 				
-					webStatsMods.append("<tr><td>"+Mod.text()+"</td><td>"+Mod.attr("author")+"</td><td>"+Mod.attr("hash")+"</td>"+versionStr+"</tr>");
+					webStatsMods.append("<tr><td>"+modText+"</td><td>"+authorText+"</td><td>"+Mod.attr("hash")+"</td>"+versionStr+"</tr>");
 				});
 			}
 			
