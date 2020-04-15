@@ -7,4 +7,4 @@
 - template.html - old one provided by GAINTS
 - my_template.html - my edited one, little bit more nice and I added possibility to translate some text
 - for setup read official readme, part about HTML5 INTEGRATION: dedicatedServer_WebStatsGuide_EN
-- for setup of my_template, just copy all to new article/page and change links to you web server and dedic server
+- for setup of my_template, just copy all to new article/page and change links to your web server and dedic server
