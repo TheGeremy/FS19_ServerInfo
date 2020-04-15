@@ -158,6 +158,7 @@ var my_dictionary = {
   "MAIZE":"kukurica",
   "LIQUIDFERTILIZER":"tekuté hnojivo",
   "BIOMILK":"bio mlieko",
+  "MILK":"mlieko",
   "WOOD2":"drevenné dosky",
   "CHAFF":"rezanka",
   "APPLE":"jablká",
@@ -168,6 +169,7 @@ var my_dictionary = {
   "PIGFOOD":"krmivo",
   "EGG":"vajcia",
   "TREESAPLINGS":"sadenice",
+  "WOODCHIPS":"štiepka",
   // names of items vehicles etc...
   "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
