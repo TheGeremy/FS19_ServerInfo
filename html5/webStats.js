@@ -3,15 +3,17 @@
  * Copyright (c) 2003-2013 Christian Ammann and Stefan Geiger, Confidential, All Rights Reserved.
  */
 
+// this must be set manualy by your own farms on map !!!!!!!!!!!!!!!!!!!
+// you can find detail in savegame folder, file farms.xml
+var farmNameMapping = {
+	'1':'Geremy Farm',
+	'3':'Ripe farma',
+	'4':'Mara Farm',
+	'5':'Cerna Ovca a.s.'
+};
+
 function loadWebStats(url, showIsAdmin, showModVersion) {
-	// this must be set manualy by your own farms on map !!!!!!!!!!!!!!!!!!!
-	// you can find detail in savegame folder, file farms.xml
-    var farmNameMapping = {
-	        '1':'Geremy Farm',
-	        '3':'Ripe farma',
-	        '4':'Mara Farm',
-	        '5':'Cerna Ovca a.s.'
-	};
+
 	var getVehicleType = (function () {
 	    // Maps individual vehicle types to vehicle group names
 	    var vehicleGroupMapping = {
@@ -245,9 +247,11 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 			
 			var webStatsVehicles = $("#webStatsVehicles");
 			var Vehicles = $(data).find("Server Vehicles Vehicle");
+			var vehId = 0;
 			// var i = 0;
 			if (webStatsVehicles != null && Vehicles != null) {
 				Vehicles.each(function(index, element) {
+					vehId = vehId + 1;
 					var veh = $(element);
 					// console.log(veh);
 					/* translate operator */
@@ -317,8 +321,30 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					} else {
 						/* if veh.attr("fillLevels") undefined */
 						fillLevels = "0,00";
-					}		
-					webStatsVehicles.append("<tr><td>"+$.i18n._(veh.attr("name"))+"</td><td>"+$.i18n._(veh.attr("category"))+"</td><td>"+$.i18n._(veh.attr("type"))+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td>"+veh.attr("x")+" "+veh.attr("y")+" "+veh.attr("z")+"</td></tr>");
+					}
+					
+					var vehicleNameText = "";
+					if ($.i18n._(veh.attr("name")).length > 30) {
+						vehicleNameText = $.i18n._(veh.attr("name")).substring(0, 30) + "...";
+					} else {
+						vehicleNameText = $.i18n._(veh.attr("name"));
+					}
+
+					var vehicleCategoryText = "";
+					if ($.i18n._(veh.attr("category")).length > 20) {
+						vehicleCategoryText = $.i18n._(veh.attr("category")).substring(0, 20) + "...";
+					} else {
+						vehicleCategoryText = $.i18n._(veh.attr("category"));
+					}
+
+					var vehicleTypeText = "";
+					if ($.i18n._(veh.attr("type")).length > 20) {
+						vehicleTypeText = $.i18n._(veh.attr("type")).substring(0, 20) + "...";
+					} else {
+						vehicleTypeText = $.i18n._(veh.attr("type"));
+					}
+
+					webStatsVehicles.append("<tr><td>"+vehicleNameText+"</td><td>"+vehicleCategoryText+"</td><td>"+vehicleTypeText+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td id=\""+vehId+"farmId\">0</td><td id=\""+vehId+"operTime\" style=\"text-align: right;\">0</td></tr>");
 				});
 			}	
 
@@ -364,7 +390,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 							farmLandName = "pozemok";
 						}
 
-						webStatsFarmlands.append("<tr><td>"+farmLandName+" ("+farmland.attr("id")+")</td><td>"+farmOwnerName+" ("+farmland.attr("owner")+")</td><td style=\"text-align: right;\">"+farmLandArea+" ("+farmLandAreaHa+")</td><td style=\"text-align: right;\">"+farmLandPrice+"</td></tr>");
+						webStatsFarmlands.append("<tr><td>"+farmLandName+"</td><td>"+farmOwnerName+"</td><td style=\"text-align: right;\">"+farmLandArea+" ("+farmLandAreaHa+")</td><td style=\"text-align: right;\">"+farmLandPrice+"</td></tr>");
 					}						
 				});
 			}	
@@ -542,5 +568,45 @@ function loadGreatDemands(url) {
       		webStatsGreatDemands.append("<tr><td>"+$.i18n._(fillTypeName)+"</td><td style=\"text-align: right;\">"+percentualIncrease+" %</td><td style=\"text-align: right;\">"+demandDuration+" h</td></tr>");
       	}
 		});
+	});
+}
+
+
+function vehicleDetails(url) {
+	$.get(url, function(data){
+		/*
+		not possible to connect this file with stats file from loadWebStats
+		stats file missing vehicle id
+		this file missing vehicle name
+		but the order of vehicles is the same
+		 */
+      
+	   /* detailed list of vehicles */
+		var DetailedVehicles = $(data).find("vehicles vehicle");
+		var vehiclesPool = {};
+		var rowId = "";
+		var operTime = 0;
+		var farmName = "";
+		DetailedVehicles.each(function(index, element) {
+      	var detaledVehicle = $(element);
+
+      	// calculate operating time in hours
+      	operTime = detaledVehicle.attr("operatingTime");
+      	operTime = Math.round((((operTime/60)/60) + Number.EPSILON) * 10) / 10;
+      	operTime = operTime.toFixed(2);
+
+      	// table is already loaded with appropriate column with row id => farm_id + farmId string +> 5farmId, 19farmId, ..
+      	// now replace zero initial value with correct value, replace by tag id 
+      	rowId = "#"+detaledVehicle.attr("id")+"farmId";    // id constuct like #19farmId
+      	farmName = farmNameMapping[detaledVehicle.attr("farmId")];
+      	$(rowId).text(farmName);
+      	
+      	// table is already loaded with appropriate column with row id => farm_id + operTime string +> 5operTime, 19operTime, ..
+      	// now replace zero initial value with correct value, replace by tag id 
+      	rowId = "#"+detaledVehicle.attr("id")+"operTime";      // id constuct like #19operTime
+      	$(rowId).text(operTime);
+      	//console.log(rowId);
+		});
+
 	});
 }
