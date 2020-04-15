@@ -4,6 +4,14 @@
  */
 
 function loadWebStats(url, showIsAdmin, showModVersion) {
+	// this must be set manualy by your own farms on map !!!!!!!!!!!!!!!!!!!
+	// you can find detail in savegame folder, file farms.xml
+    var farmNameMapping = {
+	        '1':'Geremy Farm',
+	        '3':'Ripe farma',
+	        '4':'Mara Farm',
+	        '5':'Cerna Ovca a.s.'
+	};
 	var getVehicleType = (function () {
 	    // Maps individual vehicle types to vehicle group names
 	    var vehicleGroupMapping = {
@@ -313,6 +321,54 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					webStatsVehicles.append("<tr><td>"+$.i18n._(veh.attr("name"))+"</td><td>"+$.i18n._(veh.attr("category"))+"</td><td>"+$.i18n._(veh.attr("type"))+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td>"+veh.attr("x")+" "+veh.attr("y")+" "+veh.attr("z")+"</td></tr>");
 				});
 			}	
+
+			var webStatsFarmlands = $("#webStatsFarmlands");
+			var Farmlands = $(data).find("Server Farmlands Farmland");
+			if (webStatsFarmlands != null && Farmlands != null) {
+				// go trough0t each farmland 
+				Farmlands.each(function(index, element) {
+					// take farmland
+					var farmland = $(element);
+
+					if (farmland.attr("owner") != 0) {
+						if (farmNameMapping[farmland.attr("owner")]) {
+							var farmOwnerName = farmNameMapping[farmland.attr("owner")];
+						} else {
+							var farmOwnerName = "nová farma";
+						}
+						var farmLandArea = farmland.attr("area");
+						var farmLandAreaHa = 0;
+						var farmLandPrice = "";
+						var farmLandName = "";
+
+						if (farmLandArea != null) {
+							farmLandPrice = farmLandArea.replace(/(.)(?=(\d{3})+$)/g,'$1.');
+						} else {
+							farmLandPrice = "0";
+						}
+
+						farmLandArea = Math.ceil(farmLandArea / 7);
+
+						if (farmLandArea != null) {
+							farmLandAreaHa = Math.round(((farmLandArea/10000) + Number.EPSILON) * 100) / 100;
+							farmLandAreaHa = farmLandAreaHa.toFixed(2);
+							farmLandArea = farmLandArea.toString();
+							farmLandArea = farmLandArea.replace(/(.)(?=(\d{3})+$)/g,'$1.');
+						} else {
+							farmLandArea = "0";
+						}
+
+						if (farmland.attr("name") != "") {
+							farmLandName = farmland.attr("name");
+						} else {
+							farmLandName = "pozemok";
+						}
+
+						webStatsFarmlands.append("<tr><td>"+farmLandName+" ("+farmland.attr("id")+")</td><td>"+farmOwnerName+" ("+farmland.attr("owner")+")</td><td style=\"text-align: right;\">"+farmLandArea+" ("+farmLandAreaHa+")</td><td style=\"text-align: right;\">"+farmLandPrice+"</td></tr>");
+					}						
+				});
+			}	
+
             
 			var webStatsMap = $("#webStatsMap");
             var Vehicles = $(data).find("Server Vehicles Vehicle");

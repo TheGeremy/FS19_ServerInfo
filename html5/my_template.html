@@ -1,37 +1,47 @@
 <p id="webStats">
-<strong id="webStatsStrong">Hlavné informácie</strong>
-<em>Verzia:&nbsp;</em><i id="webStatsVersion"><!-- Dynamic content from JS --></i><br>
-<em>Hra:&nbsp;</em><i id="webStatsGame"> <!-- Dynamic content from JS --></i><br>
-<em>Server:&nbsp;</em><i id="webStatsServer"> <!-- Dynamic content from JS --></i><br>
-<em>Názov:&nbsp;</em><i id="webStatsName"> <!-- Dynamic content from JS --></i><br>
-<em>Mapa:&nbsp;</em><i id="webStatsMapName"> <!-- Dynamic content from JS --></i><br>
-<em>Veľkosť mapy:&nbsp;</em><i id="webStatsMapSize"> <!-- Dynamic content from JS --></i><br>
-<em>Peniaze:&nbsp;</em><i id="webStatsMoney"> <!-- Dynamic content from JS --></i><br>
-</p>
-
+<strong class="webStatsStrong">Hlavné informácie</strong>
+<div id="kontajner">
+<div>
+<em>Hra:&nbsp;</em><i id="webStatsGame"></i>
+<em>Verzia:&nbsp;</em><i id="webStatsVersion"></i>
+<em>Server:&nbsp;</em><i id="webStatsServer"></i></div>
+<div>
+<em>Názov:&nbsp;</em><i id="webStatsName"></i>
+<em>Mapa:&nbsp;</em><i id="webStatsMapName"></i>
+<em>Veľkosť mapy:&nbsp;</em><i id="webStatsMapSize"></i></div>
+<div>
+<em>Obtiažnosť:&nbsp;</em><i id="webStatsDiff"></i>
+<em>Peniaze:&nbsp;</em><i id="webStatsMoney"></i>
+<em>Odohraný čas:&nbsp;</em><i id="webStatsTime"></i></div>
+</div>
 <p id="webStats">
-<strong id="webStatsStrong">Hráči</strong>
-</p>
+<strong class="webStatsStrong" id="webStatsPlCount"></strong>
 <table class="webStatsTable" id="webStatsPlayers">
-<tr><td><b>Meno</b></td><td><b>Čas</b></td><td><b>Pozícia</b></td><td><b>Rola</b></td></tr>
-</table>
-
-<p id="webStats">
-<strong id="webStatsStrong">Módy</strong>
-</p>
-<table class="webStatsTable" id="webStatsMods">
+<tbody>
 <tr>
-<td><b>Mód</b></td>
-<td><b>Autor</b></td>
-<td><b>Hash</b></td>
-<td><b>Verzia</b></td>
+<td><b>Meno</b></td>
+<td><b>Čas</b></td>
+<td><b>Pozícia</b></td>
+<td><b>Rola</b></td>
 </tr>
+</tbody>
 </table>
-
 <p id="webStats">
-<strong id="webStatsStrong">Vozidlá</strong>
-</p>
+<strong id="webStatsStrong">Pozemky</strong>
+<table class="webStatsTable" id="webStatsFarmlands">
+<tbody>
+<tr>
+<td><b>Názov pozemku (id)</b></td>
+<td><b>Názov farmy (id)</b></td>
+<td width="110" style="text-align: center;"><b>Plocha m<sup>2</sup> (ha)</b></td>
+<td width="110" style="text-align: center;"><b>Cena</b></td>
+</tr>
+</tbody>
+</table>
+<p id="webStats">
+<strong class="webStatsStrong">Vozidlá</strong>
 <table class="webStatsTable" id="webStatsVehicles">
+<tbody>
 <tr>
 <td><b>Názov</b></td>
 <td><b>Categória</b></td>
@@ -41,14 +51,36 @@
 <td><b>Operátor</b></td>
 <td><b>Pozícia</b></td>
 </tr>
+</tbody>
 </table>
-
 <p id="webStats">
 <strong id="webStatsStrong">Mapa</strong>
-</p>
-<div id="webStatsMap" style="position:relative; width:1024px; height:1024px; overflow:auto">
-</div>
-<p>Powered By <a href="http://www.giants-software.com/">GIANTS Software</a></p>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://fs19.nuba.synology.me/wp-content/html5/webStats.js"></script>
-<script type="text/javascript">loadWebStats("http://luffty.asuscomm.com:8080/feed/dedicated-server-stats.xml?code=af3a228f833639d1b4ac39c14e9dcb4d", true, true);</script>
+<div id="webStatsMap" style="position:relative; width:1024px; height:1024px; overflow:auto"></div>
+Powered By <a href="http://www.giants-software.com/">GIANTS Software</a>
+
+<p id="webStats">
+<strong class="webStatsStrong">Módy</strong>
+<table class="webStatsTable" id="webStatsMods">
+<tbody>
+<tr>
+<td><b>Mód</b></td>
+<td><b>Autor</b></td>
+<td><b>Hash</b></td>
+<td><b>Verzia</b></td>
+</tr>
+</tbody>
+</table>
+<table style="margin-top: 30px;">
+<tbody>
+<tr>
+<td>
+<a href="#" onclick="history.back();">Späť</a></td>
+</tr>
+</tbody>
+</table>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://fs19.nuba.synology.me/wp-content/html5/jquery.i18n.js" type="text/javascript"></script>
+<script src="http://fs19.nuba.synology.me/wp-content/html5/translation_SK.js" type="text/javascript"></script>
+<script src="http://fs19.nuba.synology.me/wp-content/html5/webStats.js" type="text/javascript"></script>
+<script type="text/javascript">loadWebStats("http://luffty.asuscomm.com:8080/feed/dedicated-server-stats.xml?code=7cd593e0bd26cc35febab3eb523f8ece", true, true);</script>
+<script type="text/javascript">loadCareerSavegame("http://luffty.asuscomm.com:8080/feed/dedicated-server-savegame.html?code=7cd593e0bd26cc35febab3eb523f8ece&file=careerSavegame");</script>
