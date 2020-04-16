@@ -557,6 +557,7 @@ function loadGreatDemands(url) {
 		GreatDemands.each(function(index, element) {
       	var greatDemand = $(element);
       	var fillTypeName = greatDemand.attr("fillTypeName");
+      	var demandStartHour = greatDemand.attr("demandStartHour");
       	var demandMultiplier = greatDemand.attr("demandMultiplier");
       	var demandDuration = greatDemand.attr("demandDuration");
       	var isRunning = (greatDemand.attr("isRunning") == 'true');
@@ -565,7 +566,7 @@ function loadGreatDemands(url) {
       	var percentualIncrease = Math.floor((demandMultiplier*100) - 100);
 
       	if (isValid && isRunning) {
-      		webStatsGreatDemands.append("<tr><td>"+$.i18n._(fillTypeName)+"</td><td style=\"text-align: right;\">"+percentualIncrease+" %</td><td style=\"text-align: right;\">"+demandDuration+" h</td></tr>");
+      		webStatsGreatDemands.append("<tr><td>"+$.i18n._(fillTypeName)+"</td><td style=\"text-align: right;\">"+percentualIncrease+" %</td><td style=\"text-align: right;\">"+demandDuration+" h</td><td style=\"text-align: right;\">"+demandStartHour+" h</td></tr>");
       	}
 		});
 	});
