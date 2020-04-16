@@ -183,7 +183,7 @@ var my_dictionary = {
   "appleBox":"Apple Pallet",
   "FS19_manureSystem.vanillaLiquidTank":"paleta",
   // "UNKNOWN":
-  "UNKNOWN":"žiadny"
+  "UNKNOWN":"---"
   // "":"",
 }
 
