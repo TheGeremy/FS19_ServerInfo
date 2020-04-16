@@ -257,7 +257,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					/* translate operator */
 					switch(veh.attr("controller")) {
 					  	case undefined:
-					    	controller = "žiadny";
+					    	controller = "---";
 					    	break;				    	
 					   default:
     						controller = veh.attr("controller");
@@ -301,7 +301,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 						});
 					} else {
 						/* if veh.attr("fillTypes") undefined */
-						fillTypes = "žiadny";
+						fillTypes = "---";
 					}
 					/* format numbers */
 					/*console.log(veh.attr("fillTypes"));*/
@@ -509,7 +509,7 @@ function loadCareerSavegame(url) {
 				case (dayHours == 1):
 					hoursText = " hodinu";
 					break;
-				case (dayHours < 4):
+				case (dayHours < 5):
 					hoursText = " hodiny";
 					break;				    									    	
 				default:
@@ -520,7 +520,7 @@ function loadCareerSavegame(url) {
 				case (days == 1):
 					daysText = " deň";
 					break;
-				case (days < 4):
+				case (days < 5):
 					daysText = " dni";
 					break;				    									    	
 				default:
@@ -531,7 +531,7 @@ function loadCareerSavegame(url) {
 				case (minutes == 1):
 					minutesText = " minútu";
 					break;
-				case (minutes < 4):
+				case (minutes < 5):
 					minutesText = " minuty";
 					break;				    									    	
 				default:
