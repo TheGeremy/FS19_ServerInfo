@@ -173,6 +173,8 @@ var my_dictionary = {
   "TREESAPLINGS":"sadenice",
   "WOODCHIPS":"štiepka",
   "BALENET":"sieťovina",
+  "RYE":"žito",
+  "CANOLA":"repka",
   // names of items vehicles etc...
   "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
