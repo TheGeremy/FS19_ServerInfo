@@ -455,8 +455,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 			
 		}
 
-    });            
-	
+    });
 }
 
 function loadCareerSavegame(url) {
@@ -556,18 +555,17 @@ function loadGreatDemands(url) {
 		GreatDemands.each(function(index, element) {
       	var greatDemand = $(element);
       	var fillTypeName = greatDemand.attr("fillTypeName");
-      	var demandStartHour = greatDemand.attr("demandStartHour");
-      	var demandStartDay = greatDemand.attr("demandStartDay");
       	var demandMultiplier = greatDemand.attr("demandMultiplier");
       	var demandDuration = greatDemand.attr("demandDuration");
       	var isRunning = (greatDemand.attr("isRunning") == 'true');
       	var isValid = (greatDemand.attr("isValid") == 'true');
-
+      	
+      	// calculate percentual increase of actual price
       	var percentualIncrease = Math.floor((demandMultiplier*100) - 100);
 
       	if (isValid && isRunning) {
-      		webStatsGreatDemands.append("<tr><td>"+$.i18n._(fillTypeName)+"</td><td style=\"text-align: right;\">"+percentualIncrease+" %</td><td style=\"text-align: right;\">"+demandDuration+" h</td><td style=\"text-align: right;\">"+demandStartDay+" d "+demandStartHour+" h</td></tr>");
-      	}
+      		webStatsGreatDemands.append("<tr><td>"+$.i18n._(fillTypeName)+"</td><td style=\"text-align: right;\">"+percentualIncrease+" %</td><td style=\"text-align: right;\">"+demandDuration+" h</td></tr>");
+      	}	
 		});
 	});
 }
