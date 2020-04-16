@@ -1,0 +1,83 @@
+#webStats {
+	margin-bottom: 0px !important;
+	margin-top: 12px !important;
+	box-sizing: content-box !important;
+}
+/* header information */
+#webStatsGame {
+	margin-left:2.3em;
+}
+#webStatsVersion {
+	margin-left:1em;
+}
+#webStatsServer {
+	margin-left:1em;
+}
+#webStatsName {
+	margin-left:4.1em;
+}
+#webStatsMapName {
+	margin-left:4.3em;
+}
+#webStatsMapSize {
+	margin-left:0.7em;
+}
+#webStatsDiff {
+	margin-left:1.8em;
+}
+#webStatsMoney {
+	margin-left:3em;
+}
+#webStatsTime {
+	margin-left:0.4em;
+}
+#kontajner {
+	border-top: 1px solid #32433f;
+	border-bottom: 1px solid #32433f;
+}
+#kontajner * {
+  padding-top: 15px;
+  padding-right: 8px;
+  padding-bottom: 15px;
+  padding-left: 8px;	
+}
+#kontajner div em {
+	color: #32433f;
+}
+#kontajner div i {
+	color: #737473;	
+}
+/* table whole */
+.webStatsTable {
+	padding: 2px !important;
+	width: 1024px;
+}
+/* table heading */
+.webStatsTable tr:first-child td {
+	border: 1px double #e7e9e8;
+	padding-left: 5px;
+	color: #e7e9e8;
+	background-color: #32433f;
+	font-size: 14px;
+}
+/* table body cells */
+.webStatsTable td {
+	border: 1px solid #AEA9A9;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 12px;
+	color: #32433f;
+}
+#kontajner
+{
+  margin: 0px 3px 0px 3px;
+  width: 1024px;
+	padding: 0px;
+}   
+#kontajner > div
+{
+  display: inline-block;
+	margin: 0px 15px 0px 0px;
+	width: 31%;
+	vertical-align: top;
+} 
