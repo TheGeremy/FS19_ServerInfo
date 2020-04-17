@@ -187,9 +187,9 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 						var adminStr = "";
 						if (showIsAdmin) {
 							if (Player.attr("isAdmin") == "true") {
-								adminStr = "Admin";
+								adminStr = "admin";
 							} else {
-								adminStr = "Farmár";
+								adminStr = "farmár";
 							}
 						}
 						
@@ -206,7 +206,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 						
 
 						if (minutes < 10) {minutes = "0"+minutes;}
-						webStatsPlayers.append("<tr><td>"+Player.text()+"</td><td>"+hours+":"+minutes+"</td><td>"+posStr+"</td><td>"+adminStr+"</td></tr>");
+						webStatsPlayers.append("<tr><td>"+Player.text()+"</td><td>"+posStr+"</td><td style=\"text-align: center;\">"+adminStr+"</td><td style=\"text-align: center;\">"+hours+":"+minutes+"</td></tr>");
 					}
 				});
 			}
