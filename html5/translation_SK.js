@@ -128,6 +128,7 @@ var my_dictionary = {
   "cultivatingSowingMachine":"sejačka",
   "FS19_broom.broom":"pracovný nástroj",
   "FS19_TajfunEGV80AHK.TajfunWinch":"ťažný nástroj",
+  "FS19_FlieglshovelPack_2.flieglShovel":"lyžica",
   // items
   "PALLETS":"palety",
   "pallet":"paleta",
