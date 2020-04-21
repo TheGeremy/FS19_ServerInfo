@@ -50,6 +50,7 @@ var my_dictionary = {
   "BEETVEHICLES":"kombajny",
   "BEETHARVESTING":"žacie stoly",
   "PLACEABLEMISC":"palety",
+  "LEVELER":"vyrovnávací valec",
   // vehicles
   "FS19_8R_US.tractor8rUS":"traktor",
   "pdlc_johnDeereCottonPack.extendedBaleLoader":"príves na balíky bavlny",
@@ -98,6 +99,7 @@ var my_dictionary = {
   "FS19_manureSystem.vanillaPGII25":"cisterna",   
   // implements
   "FS19_zunhammerDockingStation.dockingStation":"adaptér",
+  "silageRoller":"silážny valec",
   "cutterFruitPreparer":"rezák",
   "fertilizingCultivator":"kultivátor s hnojením", 
   "pdlc_claasPack.extendedCutter":"silážny žací stôl",  
