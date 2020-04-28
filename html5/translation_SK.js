@@ -18,7 +18,8 @@ var my_dictionary = {
   "PLOWS":"pluhy",  
   "SEEDERS":"sejačky",  
   "FERTILIZERSPREADERS":"rozprašovače",  
-  "SPRAYERS":"postrekovače",  
+  "SPRAYERS":"postrekovače", 
+  "SPRAYERVEHICLES":"postrekovače", 
   "WEEDERS":"plečky",
   "TEDDERS":"obracačky",
   "PLANTERS":"sádzače",
@@ -72,6 +73,9 @@ var my_dictionary = {
   "FS19_JD_S700_US.combineS790":"kombajn",
   "FS19_T9_extendedhud.tractorT9700":"traktor",
   "FS19_addon_strawHarvest.kroneComprimaV180XC":"baliaci stroj",
+  "FS19_CaseIH_Magnum_US_Series.Magnum":"traktor",
+  "FS19_NH_T7_extendedhud.tractorT7315mod":"traktor",
+  "selfPropelledSprayer":"postrekovač",
   // trailers
   "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",     
   "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
@@ -97,7 +101,10 @@ var my_dictionary = {
   // slury spreaders
   "FS19_manureSystem.vanillaPGII20":"cisterna",
   "FS19_manureSystem.vanillaPGII25":"cisterna",   
+  "FS19_manureSystem.vanillaPremiumIntegral30000":"cisterna",
   // implements
+  "FS19_manureSystem.vanillaNavigator6000":"postrekovač",
+  "FS19_stallkampPump.manureSystemPump":"pumpa na močovku",
   "FS19_zunhammerDockingStation.dockingStation":"adaptér",
   "silageRoller":"silážny valec",
   "cutterFruitPreparer":"rezák",
@@ -112,6 +119,7 @@ var my_dictionary = {
   "baler":"lis na balíky",
   "mower":"kosačka",
   "windrower":"riadkovačka",
+  "FS19_KroneSwadro2000.windrowerLE":"riadkovačka",
   "plow":"pluh",
   "sowingMachine":"sejačka",
   "spreader":"rozprašovač",
@@ -178,6 +186,7 @@ var my_dictionary = {
   "BALENET":"sieťovina",
   "RYE":"žito",
   "CANOLA":"repka",
+  "POTATO":"zemiaky",
   // names of items vehicles etc...
   "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
