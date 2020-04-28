@@ -6,10 +6,12 @@
 // this must be set manualy by your own farms on map !!!!!!!!!!!!!!!!!!!
 // you can find detail in savegame folder, file farms.xml
 var farmNameMapping = {
-	'1':'Geremy Farm',
-	'3':'Ripe farma',
-	'4':'Mara Farm',
-	'5':'Cerna Ovca a.s.'
+	'0':'Černá Ovce',
+	'1':'Farma 1',
+	'2':'Farma 2',
+	'3':'Geremy\'s farm',
+	'4':'Marova farma',
+	'5':'Ripe'
 };
 
 function loadWebStats(url, showIsAdmin, showModVersion) {
@@ -252,15 +254,19 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 				Vehicles.each(function(index, element) {
 					vehId = vehId + 1;
 					var veh = $(element);
+					var controller = "";
 					// console.log(veh);
 					/* translate operator */
-					switch(veh.attr("controller")) {
-					  	case undefined:
-					    	controller = "---";
-					    	break;				    	
-					   default:
-    						controller = veh.attr("controller");
+					if (typeof veh.attr("controller") == 'undefined') {
+						if (veh.attr("isAIActive") == 'true') {
+							controller = "pomocník";
+						} else {
+							controller = "---";
+						}
+					} else {
+						controller = veh.attr("controller");
 					}
+
 					function formatThousands(n,dp,f) {
 						// dp - decimal places
 						// f - format >> 'us', 'eu'
@@ -330,19 +336,21 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 					}
 
 					var vehicleCategoryText = "";
-					if ($.i18n._(veh.attr("category")).length > 20) {
-						vehicleCategoryText = $.i18n._(veh.attr("category")).substring(0, 20) + "...";
+					if ($.i18n._(veh.attr("category")).length > 24) {
+						vehicleCategoryText = $.i18n._(veh.attr("category")).substring(0, 24) + "...";
 					} else {
 						vehicleCategoryText = $.i18n._(veh.attr("category"));
 					}
-
+					//vehicleCategoryText = $.i18n._(veh.attr("category"));
+					
 					var vehicleTypeText = "";
-					if ($.i18n._(veh.attr("type")).length > 20) {
-						vehicleTypeText = $.i18n._(veh.attr("type")).substring(0, 20) + "...";
+					if ($.i18n._(veh.attr("type")).length > 24) {
+						vehicleTypeText = $.i18n._(veh.attr("type")).substring(0, 24) + "...";
 					} else {
 						vehicleTypeText = $.i18n._(veh.attr("type"));
 					}
-
+					//vehicleTypeText = $.i18n._(veh.attr("type"));
+					
 					webStatsVehicles.append("<tr><td>"+vehicleNameText+"</td><td>"+vehicleCategoryText+"</td><td>"+vehicleTypeText+"</td><td>"+$.i18n._(fillTypes)+"</td><td>"+fillLevels+"</td><td>"+controller+"</td><td id=\""+vehId+"farmId\">0</td><td id=\""+vehId+"operTime\" style=\"text-align: right;\">0</td></tr>");
 				});
 			}	
@@ -375,6 +383,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 						farmLandArea = Math.ceil(farmLandArea / 7);
 
 						if (farmLandArea != null) {
+							// change from m2 to ha
 							farmLandAreaHa = Math.round(((farmLandArea/10000) + Number.EPSILON) * 100) / 100;
 							farmLandAreaHa = farmLandAreaHa.toFixed(2);
 							farmLandArea = farmLandArea.toString();
@@ -389,7 +398,7 @@ function loadWebStats(url, showIsAdmin, showModVersion) {
 							farmLandName = "pozemok";
 						}
 
-						webStatsFarmlands.append("<tr><td>"+farmLandName+"</td><td>"+farmOwnerName+"</td><td style=\"text-align: right;\">"+farmLandArea+" ("+farmLandAreaHa+")</td><td style=\"text-align: right;\">"+farmLandPrice+"</td></tr>");
+						webStatsFarmlands.append("<tr><td>"+farmLandName+" "+farmland.attr("id")+"</td><td>"+farmOwnerName+"</td><td style=\"text-align: right;\">"+farmLandArea+" ("+farmLandAreaHa+")</td><td style=\"text-align: right;\">"+farmLandPrice+"</td></tr>");
 					}						
 				});
 			}	
@@ -573,10 +582,12 @@ function loadGreatDemands(url) {
 
 function vehicleDetails(url) {
 	$.get(url, function(data){
+		// linked XML >> dedicated-server-stats.xml
+      	// linked vehicles XML >> edicated-server-savegame.html >> file=vehicles
 		/*
 		not possible to connect this file with stats file from loadWebStats
-		stats file missing vehicle id
-		this file missing vehicle name
+		slnked XML missing vehicle id
+		linked vehicles XML missing vehicle name
 		but the order of vehicles is the same
 		 */
       
@@ -586,23 +597,46 @@ function vehicleDetails(url) {
 		var rowId = "";
 		var operTime = 0;
 		var farmName = "";
+		// map has a train
+		var hasLoco = false;
+
 		DetailedVehicles.each(function(index, element) {
-      	var detaledVehicle = $(element);
+      	var detailedVehicle = $(element);
+
+      	// if map has a train those two list of vehicles are not the same, because list from linked XML has not a locomotive
+      	//  list from linked vehicles xml file has locomotive in list, I hope it has always id=1
+      	//  so all ids has to be moved by one id-1 to match ids in linked XML
+
+      	// find if map has a train
+      	if (detailedVehicle.attr("id") == 1 ) {
+      		if (detailedVehicle.attr("filename").search("loco") >= 0) {
+      			hasLoco = true;
+      		}
+      	}
 
       	// calculate operating time in hours
-      	operTime = detaledVehicle.attr("operatingTime");
+      	operTime = detailedVehicle.attr("operatingTime");
       	operTime = Math.round((((operTime/60)/60) + Number.EPSILON) * 10) / 10;
       	operTime = operTime.toFixed(2);
 
       	// table is already loaded with appropriate column with row id => farm_id + farmId string +> 5farmId, 19farmId, ..
       	// now replace zero initial value with correct value, replace by tag id 
-      	rowId = "#"+detaledVehicle.attr("id")+"farmId";    // id constuct like #19farmId
-      	farmName = farmNameMapping[detaledVehicle.attr("farmId")];
+      	if (hasLoco) {
+      		rowId = "#"+(parseInt(detailedVehicle.attr("id")) -1).toString()+"farmId";    // id constuct like #19farmId
+      	} else {
+      		rowId = "#"+detailedVehicle.attr("id")+"farmId";    // id constuct like #19farmId
+      	}
+      	farmName = farmNameMapping[detailedVehicle.attr("farmId")];
       	$(rowId).text(farmName);
       	
       	// table is already loaded with appropriate column with row id => farm_id + operTime string +> 5operTime, 19operTime, ..
       	// now replace zero initial value with correct value, replace by tag id 
-      	rowId = "#"+detaledVehicle.attr("id")+"operTime";      // id constuct like #19operTime
+      	if (hasLoco) {
+      		rowId = "#"+(parseInt(detailedVehicle.attr("id")) -1).toString()+"operTime";      // id constuct like #19operTime
+      	} else {
+      		rowId = "#"+detailedVehicle.attr("id")+"operTime";      // id constuct like #19operTime
+      	}
+
       	$(rowId).text(operTime);
       	//console.log(rowId);
 		});
