@@ -150,6 +150,7 @@ var my_dictionary = {
   "LIQUIDMANURE":"močovka",
   "ROUNDBALE":"guľatý balík",
   "WOOL":"vlna",
+  "SOYBEAN" :"repka", 
   "COTTON":"bavlna",
   "ANIMALS":"zvieratá", 
   "HERBICIDE":"herbicíd",
@@ -187,6 +188,8 @@ var my_dictionary = {
   "RYE":"žito",
   "CANOLA":"repka",
   "POTATO":"zemiaky",
+  "STRAWPELLETS":"slamenné pelety",
+  "HAYPELLETS":"senné pelety",
   // names of items vehicles etc...
   "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",

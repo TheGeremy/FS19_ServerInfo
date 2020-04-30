@@ -10,7 +10,7 @@ var farmNameMapping = {
 	'1':'Farma 1',
 	'2':'Farma 2',
 	'3':'Geremy\'s farm',
-	'4':'Marova farma',
+	'4':'Marovy kravky',
 	'5':'Ripe'
 };
 
