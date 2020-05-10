@@ -76,6 +76,12 @@ var my_dictionary = {
   "FS19_CaseIH_Magnum_US_Series.Magnum":"traktor",
   "FS19_NH_T7_extendedhud.tractorT7315mod":"traktor",
   "selfPropelledSprayer":"postrekovač",
+  "FS19_JD6030Premium_V3.JD6030Pv3":"traktor",
+  // niva harvester
+  "FS19_rsmNivaSk5.nivaSK5":"kombajn",
+  "FS19_rsmNivaSk5.cutterNivaSK5":"rezák",
+  "FS19_rsmNivaSk5.cutterTrailerNivaSK5":"príves na rezák",
+  "FS19_rsmNivaSk5.pipePunNivaSK5":"príves",
   // trailers
   "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",     
   "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
@@ -146,6 +152,7 @@ var my_dictionary = {
   "pallet":"paleta",
   "BIGBAGS":"palety",
   "shovel":"lyžica",
+  "FS19_bagLifter.genetix":"paleta",
   // filables
   "MANURE":"hnoj",
   "MATERIAL":"plátno",
