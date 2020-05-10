@@ -3,6 +3,10 @@
 	margin-top: 12px !important;
 	box-sizing: content-box !important;
 }
+#webStatsMap {
+  margin: auto;
+	border: 3px solid #32433f;
+}
 /* header information */
 #webStatsGame {
 	margin-left:2.3em;
@@ -31,15 +35,10 @@
 #webStatsTime {
 	margin-left:0.4em;
 }
-#kontajner {
-	border-top: 1px solid #32433f;
-	border-bottom: 1px solid #32433f;
-}
 #kontajner * {
-  padding-top: 15px;
-  padding-right: 8px;
-  padding-bottom: 15px;
-  padding-left: 8px;	
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1.5em;	
 }
 #kontajner div em {
 	color: #32433f;
@@ -50,16 +49,21 @@
 /* table whole */
 .webStatsTable {
 	padding: 2px !important;
-	width: 1024px;
+	width: 100%;
 }
 /* table heading */
 .webStatsTable tr:first-child td {
-	border: 1px double #e7e9e8;
+	border: 1px solid #32433f;
+	border-right: 1px solid #e7e9e8;
 	padding-left: 5px;
 	color: #e7e9e8;
 	background-color: #32433f;
 	font-size: 14px;
 }
+.webStatsTable tr:first-child td:last-child {
+	border-right: 1px solid #32433f;
+}
+
 /* table body cells */
 .webStatsTable td {
 	border: 1px solid #AEA9A9;
@@ -68,11 +72,16 @@
 	font-size: 12px;
 	color: #32433f;
 }
+#webStatsVehicles {
+	font-size: 10px;
+}
 #kontajner
 {
   margin: 0px 3px 0px 3px;
-  width: 1024px;
 	padding: 0px;
+	border-top: 1px solid #32433f;
+	border-bottom: 1px solid #32433f;
+	width: 100% !important;	
 }   
 #kontajner > div
 {
@@ -81,3 +90,33 @@
 	width: 31%;
 	vertical-align: top;
 } 
+table.minimalistBlack {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+	margin: 0px 0px 20px 0px;
+}
+table.minimalistBlack tbody td {
+	border: 1px solid #AEA9A9;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 13px;
+	color: #32433f;	
+}
+table.minimalistBlack thead tr th {
+	border: 1px solid #32433f;
+	padding: 5px;
+	color: #e7e9e8;
+	background-color: #32433f;
+	font-size: 14px;
+}
+table.minimalistBlack tfoot tr td {
+	border: 1px solid #32433f;
+	padding: 5px;
+	color: #e7e9e8;
+	background-color: #32433f;
+	font-size: 14px;
+}
+.algn_right {
+	text-align: right;
+}
