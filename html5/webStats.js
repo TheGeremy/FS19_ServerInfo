@@ -7,11 +7,11 @@
 // you can find detail in savegame folder, file farms.xml
 var farmNameMapping = {
 	'0':'Černá Ovce',
-	'1':'Farma 1',
-	'2':'Farma 2',
-	'3':'Geremy\'s farm',
-	'4':'Marovy kravky',
-	'5':'Ripe'
+	'1':'Ripe a Jirka',
+	'2':'Pig Farm',
+	'3':'Mara',
+	'4':'Sheep farm',
+	'5':'Geremy\'s farm' 
 };
 
 function loadWebStats(url, showIsAdmin, showModVersion) {
