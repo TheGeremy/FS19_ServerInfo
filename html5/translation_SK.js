@@ -167,6 +167,7 @@ var my_dictionary = {
   "SEEDS":"sejivo",
   "LIME":"vápno",  
   "GRASS_WINDROW":"tráva",  
+  "INCARASE_GRASS":"propagačná tráva",
   "DRYGRASS_WINDROW":"seno",
   "WATER":"voda",
   "diesel":"nafta",
