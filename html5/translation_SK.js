@@ -52,6 +52,8 @@ var my_dictionary = {
   "LEVELER":"vyrovnávací valec",
   // vehicles
   "manureBarrel":"postrekovač",
+  "FS19_JohnDeere_8000_8000ten.8000TEN":"traktor",
+  "FS19_JohnDeere_8000_8000ten.8000TENic":"traktor",
   "FS19_Kuhn_Interactive_Sprayers.addtank":"postrekovač",
   "FS19_Rapid_A600_800S_Tramline.tram_fertilizingSowingMachine":"sejačka",  
   "FS19_8R_US.tractor8rUS":"traktor",
@@ -79,13 +81,15 @@ var my_dictionary = {
   "FS19_NH_T7_extendedhud.tractorT7315mod":"traktor",
   "selfPropelledSprayer":"postrekovač",
   "FS19_JD6030Premium_V3.JD6030Pv3":"traktor",
+  "STEYR_8130aTurbo_SK2_FS19.STEYR_8130_SK2":"traktor",
   // niva harvester
   "FS19_rsmNivaSk5.nivaSK5":"kombajn",
   "FS19_rsmNivaSk5.cutterNivaSK5":"rezák",
   "FS19_rsmNivaSk5.cutterTrailerNivaSK5":"príves na rezák",
   "FS19_rsmNivaSk5.pipePunNivaSK5":"príves",
   // trailers
-  "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",     
+  "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",
+  "FS19_MZHT_10.mzht10waterTrailer":"príves na vodu",     
   "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
   "trailer":"príves",
   "trainTrailer":"vagón",
@@ -110,8 +114,10 @@ var my_dictionary = {
   // slury spreaders
   "FS19_manureSystem.vanillaPGII20":"cisterna",
   "FS19_manureSystem.vanillaPGII25":"cisterna",   
+  "FS19_manureSystem.vanillaVE8000":"cisterna",
   "FS19_manureSystem.vanillaPremiumIntegral30000":"cisterna",
   // implements
+  "treePlanter":"sadzač stromov",
   "FS19_kemperPack.cutter_ropes":"silážny rezák",
   "FS19_manureSystem.vanillaNavigator6000":"postrekovač",
   "FS19_stallkampPump.manureSystemPump":"pumpa na močovku",
