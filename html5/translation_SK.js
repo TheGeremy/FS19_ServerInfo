@@ -123,6 +123,7 @@ var my_dictionary = {
   "woodTruck":"kamión na zvoz dreva",
   // implements
   "treePlanter":"sadzač stromov",
+  "FS19_fellaGrasslandEquipment.tedder_workMode":"obracačka",
   "FS19_kemperPack.cutter_ropes":"silážny rezák",
   "FS19_manureSystem.vanillaNavigator6000":"postrekovač",
   "FS19_stallkampPump.manureSystemPump":"pumpa na močovku",
