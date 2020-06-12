@@ -5,6 +5,7 @@ var my_dictionary = {
   "TRACTORSM":"traktory tredy M",
   "TRACTORSS":"traktory tredy S",
   "CULTIVATORS":"kultivátory",
+  "WOODHARVESTING":"ťažba dreva",
   "TRAILERS":"prívesy",
   "WEIGHTS":"závažia",
   "SUBSOILERS":"podrývače",
@@ -105,8 +106,9 @@ var my_dictionary = {
   "FS19_lsfmUniversalTankPack.lsfmUniversalIBCTank":"cisterna",
   "mixerWagon":"mixér",
   // manure spreaders
-  "FS19_manureSystem.vanillaFRC":"rozhadzovač",
   "manureSpreader":"rozhadzovač",  
+  "FS19_manureSystem.vanillaFRC":"rozhadzovač",
+  "FS19_manureSystem.vanillaModulo":"rozhadzovač",
   "FS19_manureSystem.vanillaMega2200":"rozhadzovač",
   "FS19_manureSystem.vanillaKuhnDeltis1302":"rozhadzovač",
   "FS19_manureSystem.vanillaKuhnPF1500":"rozhadzovač",
@@ -116,6 +118,9 @@ var my_dictionary = {
   "FS19_manureSystem.vanillaPGII25":"cisterna",   
   "FS19_manureSystem.vanillaVE8000":"cisterna",
   "FS19_manureSystem.vanillaPremiumIntegral30000":"cisterna",
+  // wood
+  "woodHarvester":"kombajn na drevo",
+  "woodTruck":"kamión na zvoz dreva",
   // implements
   "treePlanter":"sadzač stromov",
   "FS19_kemperPack.cutter_ropes":"silážny rezák",
@@ -208,6 +213,7 @@ var my_dictionary = {
   "POTATO":"zemiaky",
   "STRAWPELLETS":"slamenné pelety",
   "HAYPELLETS":"senné pelety",
+  "SUGARBEET":"cukrová repa",
   // names of items vehicles etc...
   "woolPallet":"Wool Pallet",
   "Adjustable Weight 600kg/2400kg":"SOB Weight 600kg/2400kg",
