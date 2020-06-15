@@ -91,7 +91,11 @@ var my_dictionary = {
   // trailers
   "FS19_Legras_bj140.augerWagonExtended":"šnekový voz",
   "FS19_MZHT_10.mzht10waterTrailer":"príves na vodu",     
-  "FS19_MZHT_16.mzht16waterTrailer":"príves na vodu",  
+  "FS19_MZHT_10.mzht16waterTrailer":"príves na vodu", 
+  "FS19_MZHT_10.mzht10manureBarrel":"príves na močovku",
+  "FS19_MZHT_10.mzht16manureBarrel":"príves na močovku", 
+  "FS19_MZHT_10.mzht10herbiTrailer":"univerzálny príves",
+  "FS19_MZHT_10.mzht16herbiTrailer":"univerzálny príves",  
   "trailer":"príves",
   "trainTrailer":"vagón",
   "trainTimberTrailer":"vagón",
